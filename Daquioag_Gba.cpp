@@ -32,10 +32,10 @@ int main()
 	int wordLen10 = 0;
 	int wordLen11More = 0;
 	
-	fin.open("gba.txt");
-	foutResult.open("result.txt");
-	foutCapitalize.open("capitalize.txt");
-	foutUpperCase.open("uppercase.txt");
+	fin.open("gba.txt");  // Basically your cin
+	foutResult.open("result.txt"); // Basically your cout
+	foutCapitalize.open("capitalize.txt"); // Basically your cout
+	foutUpperCase.open("uppercase.txt"); // Basically your cout
 
 //---------------------------------------------------------------------------------------------------------	
 // It checks if the files are valid or not
@@ -65,7 +65,7 @@ int main()
 	}
 //---------------------------------------------------------------------------------------------------------
 	
-	while(fin >> strA) // I am putting the gba.txt into a string strA (file called gba.txt)
+	while(fin >> strA) // I am putting each word in the gba.txt into a string strA (file called gba.txt)
 	{
 	    totalWords++; // It counts the amount of words in the string strA (file called gba.txt)
 		
@@ -128,7 +128,7 @@ int main()
 		
 		for (int ix = 0; ix < strB.length(); ix++)
 		{
-			if((strB[ix] >= 'A' && strB[ix] <= 'Z') || (strB[ix] >= 'a' && strB[ix] <= 'z'))
+			if((strB[ix] >= 'a' && strB[ix] <= 'z'))
 			{
 				strB[ix] = toupper(strB[ix]);  // This will Capitalize each letter in the string (file called gba.txt)
 			}
@@ -164,8 +164,8 @@ int main()
 	foutResult << wordLen11More << " words have the of length 11 or longer" << endl;
 	foutResult << "The total number of words in this file is " << totalWords << "\n" << endl;
 	
-	foutCapitalize << "\n" << strB << "\n" << endl;	
-	foutUpperCase << "\n" << strC << "\n" << endl;
+	foutCapitalize  << strB << "\n" << endl;	
+	foutUpperCase << strC << "\n" << endl;
 //---------------------------------------------------------------------------------------------------------	    
         
     fin.close();
@@ -175,5 +175,6 @@ int main()
 	
     return 0;
 }
+
 
 
